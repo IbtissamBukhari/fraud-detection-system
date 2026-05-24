@@ -1,0 +1,18 @@
+# Data - too large for GitHub
+data/
+*.csv
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.egg-info/
+
+# VS Code
+.vscode/
+
+# Conda / pip envs
+env/
+venv/
