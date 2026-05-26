@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": "2026-05-26 11:47:33",
+    "transaction_amount": 1.0,
+    "fraud_probability": 0.7944,
+    "risk_level": "High",
+    "confidence": "Medium Confidence"
+  }
+]
