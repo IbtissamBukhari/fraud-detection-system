@@ -222,5 +222,19 @@
     "fraud_probability": 0.0186,
     "risk_level": "Low",
     "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 16:57:44",
+    "transaction_amount": 122.99,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 16:57:53",
+    "transaction_amount": 67890.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
   }
 ]
