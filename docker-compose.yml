@@ -1,21 +1,12 @@
+version: "3.9"
+
 services:
-
-  backend:
+  api:
     build: .
-    container_name: fraud-api
-
     ports:
       - "8000:8000"
-
     volumes:
       - .:/app
-
-  frontend:
-    image: nginx:alpine
-    container_name: fraud-frontend
-
-    ports:
-      - "3000:80"
-
-    volumes:
-      - ./frontend:/usr/share/nginx/html
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
