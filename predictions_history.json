@@ -1,9 +1,226 @@
 [
   {
-    "timestamp": "2026-05-26 11:47:33",
-    "transaction_amount": 1.0,
-    "fraud_probability": 0.7944,
-    "risk_level": "High",
+    "timestamp": "2026-05-30 12:05:29",
+    "transaction_amount": 10000.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:13:12",
+    "transaction_amount": 122.99,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:13:28",
+    "transaction_amount": 1500000.0,
+    "fraud_probability": 0.1932,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:17:53",
+    "transaction_amount": 9999.99,
+    "fraud_probability": 0.1932,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:18:07",
+    "transaction_amount": 10000.0,
+    "fraud_probability": 0.1932,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:18:37",
+    "transaction_amount": 1500000.0,
+    "fraud_probability": 0.6432,
+    "risk_level": "Medium",
+    "confidence": "Low Confidence - Review Manually"
+  },
+  {
+    "timestamp": "2026-05-30 12:18:46",
+    "transaction_amount": 2999999.97,
+    "fraud_probability": 0.6432,
+    "risk_level": "Medium",
+    "confidence": "Low Confidence - Review Manually"
+  },
+  {
+    "timestamp": "2026-05-30 12:18:55",
+    "transaction_amount": 4000000.0,
+    "fraud_probability": 0.6432,
+    "risk_level": "Medium",
+    "confidence": "Low Confidence - Review Manually"
+  },
+  {
+    "timestamp": "2026-05-30 12:21:33",
+    "transaction_amount": 122.99,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:21:41",
+    "transaction_amount": 10000.0,
+    "fraud_probability": 0.3432,
+    "risk_level": "Low",
     "confidence": "Medium Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:21:56",
+    "transaction_amount": 999999.98,
+    "fraud_probability": 0.6432,
+    "risk_level": "Medium",
+    "confidence": "Low Confidence - Review Manually"
+  },
+  {
+    "timestamp": "2026-05-30 12:22:06",
+    "transaction_amount": 4000000.0,
+    "fraud_probability": 0.6432,
+    "risk_level": "Medium",
+    "confidence": "Low Confidence - Review Manually"
+  },
+  {
+    "timestamp": "2026-05-30 12:22:21",
+    "transaction_amount": 40000000.0,
+    "fraud_probability": 0.6432,
+    "risk_level": "Medium",
+    "confidence": "Low Confidence - Review Manually"
+  },
+  {
+    "timestamp": "2026-05-30 12:28:43",
+    "transaction_amount": 3999999.97,
+    "fraud_probability": 0.0863,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:29:02",
+    "transaction_amount": 39999999.98,
+    "fraud_probability": 0.1079,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:30:59",
+    "transaction_amount": 122.99,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:31:07",
+    "transaction_amount": 100000.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:31:14",
+    "transaction_amount": 100000000000.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:31:30",
+    "transaction_amount": 6.487326856382659e+19,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:32:05",
+    "transaction_amount": 122.0,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:32:18",
+    "transaction_amount": 122.0,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:42:19",
+    "transaction_amount": 122.99,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:42:26",
+    "transaction_amount": 50000000.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:42:36",
+    "transaction_amount": 5599999.98,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:43:29",
+    "transaction_amount": 122.99,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 12:43:37",
+    "transaction_amount": 12245334433542.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 13:23:49",
+    "transaction_amount": 122.99,
+    "fraud_probability": 0.0878,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 13:29:06",
+    "transaction_amount": 5000000.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 13:34:17",
+    "transaction_amount": 5000000000000.0,
+    "fraud_probability": 0.0432,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 15:57:54",
+    "transaction_amount": 50.0,
+    "fraud_probability": 0.0278,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 15:58:58",
+    "transaction_amount": 250.0,
+    "fraud_probability": 0.0309,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
+  },
+  {
+    "timestamp": "2026-05-30 15:59:35",
+    "transaction_amount": 1500.0,
+    "fraud_probability": 0.0186,
+    "risk_level": "Low",
+    "confidence": "High Confidence"
   }
 ]

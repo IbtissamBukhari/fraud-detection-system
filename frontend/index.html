@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fraud Detection AI — Frontier Risk Intelligence</title>
+  <!-- Prevent browser caching during development -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=4" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="announcement-tag">EDITORIAL CONSOLE</span>
+    <span class="announcement-text">Detect fraud with a cleaner, calmer interface and the same predictive engine.</span>
+    <a href="#analysis" class="announcement-cta">Start analysis →</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <div class="brand-icon">FD</div>
+      <div class="brand-text">
+        <span class="brand-name">FRAUD DETECTION AI</span>
+        <span class="brand-tagline">Frontier risk intelligence</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#analysis" class="nav-link active">Analysis</a></li>
+      <li><a href="#history" class="nav-link">History</a></li>
+      <li><a href="#model" class="nav-link">Model</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="api-status">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">Checking...</span>
+      </div>
+      <span class="demo-badge">Demo only</span>
+      <button class="btn-studio">Try studio</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-label">FRONTIER FRAUD INTELLIGENCE</div>
+      <h1 class="hero-title">Fraud detection,<br />in your hands.</h1>
+      <p class="hero-desc">Inspect a transaction, interpret the risk, and review model context through an editorial interface shaped around warm cream surfaces, saturated orange CTAs, and calm visual hierarchy.</p>
+      <div class="hero-actions">
+        <a href="#analysis" class="btn-primary">Analyze transaction</a>
+        <a href="#history" class="btn-ghost">View history</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-val">94.3%</span>
+          <span class="stat-label">Model AUC-ROC</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-val">590K</span>
+          <span class="stat-label">Training transactions</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-val">3.5%</span>
+          <span class="stat-label">Fraud rate baseline</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-art">
+        <svg class="hero-chart-svg" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="480" height="300" fill="#1A1714" rx="0"/>
+          <line x1="60" y1="30" x2="60" y2="240" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="130" y1="30" x2="130" y2="240" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="200" y1="30" x2="200" y2="240" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="270" y1="30" x2="270" y2="240" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="340" y1="30" x2="340" y2="240" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="410" y1="30" x2="410" y2="240" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="60" y1="60"  x2="450" y2="60"  stroke="#2E2A24" stroke-width="1"/>
+          <line x1="60" y1="100" x2="450" y2="100" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="60" y1="140" x2="450" y2="140" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="60" y1="180" x2="450" y2="180" stroke="#2E2A24" stroke-width="1"/>
+          <line x1="60" y1="220" x2="450" y2="220" stroke="#2E2A24" stroke-width="1"/>
+          <text x="50" y="64"  fill="#5A5246" font-size="9" text-anchor="end" font-family="monospace">100%</text>
+          <text x="50" y="104" fill="#5A5246" font-size="9" text-anchor="end" font-family="monospace">75%</text>
+          <text x="50" y="144" fill="#5A5246" font-size="9" text-anchor="end" font-family="monospace">50%</text>
+          <text x="50" y="184" fill="#5A5246" font-size="9" text-anchor="end" font-family="monospace">25%</text>
+          <text x="50" y="224" fill="#5A5246" font-size="9" text-anchor="end" font-family="monospace">0%</text>
+          <text x="60"  y="255" fill="#5A5246" font-size="9" text-anchor="middle" font-family="monospace">Mon</text>
+          <text x="130" y="255" fill="#5A5246" font-size="9" text-anchor="middle" font-family="monospace">Tue</text>
+          <text x="200" y="255" fill="#5A5246" font-size="9" text-anchor="middle" font-family="monospace">Wed</text>
+          <text x="270" y="255" fill="#5A5246" font-size="9" text-anchor="middle" font-family="monospace">Thu</text>
+          <text x="340" y="255" fill="#5A5246" font-size="9" text-anchor="middle" font-family="monospace">Fri</text>
+          <text x="410" y="255" fill="#5A5246" font-size="9" text-anchor="middle" font-family="monospace">Sat</text>
+          <defs>
+            <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"   stop-color="#E8620A" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#E8620A" stop-opacity="0.02"/>
+            </linearGradient>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#F5873A"/>
+              <stop offset="100%" stop-color="#E8620A"/>
+            </linearGradient>
+          </defs>
+          <polygon points="60,195 130,175 200,145 270,110 340,155 410,85 410,220 60,220" fill="url(#areaGrad)"/>
+          <polyline points="60,195 130,175 200,145 270,110 340,155 410,85" fill="none" stroke="url(#lineGrad)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+          <polyline points="60,185 130,190 200,188 270,182 340,189 410,183" fill="none" stroke="#2E7D52" stroke-width="1.8" stroke-dasharray="5,3" stroke-linejoin="round" stroke-linecap="round" opacity="0.7"/>
+          <circle cx="60"  cy="195" r="3.5" fill="#E8620A"/>
+          <circle cx="130" cy="175" r="3.5" fill="#E8620A"/>
+          <circle cx="200" cy="145" r="3.5" fill="#E8620A"/>
+          <circle cx="270" cy="110" r="3.5" fill="#E8620A"/>
+          <circle cx="340" cy="155" r="3.5" fill="#E8620A"/>
+          <circle cx="410" cy="85"  r="4.5" fill="#B91C1C" stroke="#FEE2E2" stroke-width="1.5"/>
+          <line x1="410" y1="85" x2="410" y2="60" stroke="#B91C1C" stroke-width="1" stroke-dasharray="3,2"/>
+          <rect x="370" y="42" width="78" height="16" rx="3" fill="#B91C1C" opacity="0.9"/>
+          <text x="409" y="53" fill="white" font-size="8.5" text-anchor="middle" font-family="sans-serif" font-weight="600">HIGH RISK SPIKE</text>
+          <text x="60" y="18" fill="#EDE6D6" font-size="11" font-family="sans-serif" font-weight="600" letter-spacing="0.04em">FRAUD PROBABILITY TREND</text>
+          <rect x="250" y="10" width="10" height="3" rx="1" fill="#E8620A"/>
+          <text x="264" y="16" fill="#8C8278" font-size="8.5" font-family="sans-serif">Fraud risk</text>
+          <line x1="310" y1="13" x2="320" y2="13" stroke="#2E7D52" stroke-width="1.8" stroke-dasharray="4,2"/>
+          <text x="324" y="16" fill="#8C8278" font-size="8.5" font-family="sans-serif">Legitimate</text>
+          <rect x="60" y="268" width="390" height="6" rx="3" fill="#2E2A24"/>
+          <rect x="60" y="268" width="290" height="6" rx="3" fill="url(#lineGrad)"/>
+          <text x="60"  y="285" fill="#5A5246" font-size="8" font-family="monospace">LOW</text>
+          <text x="225" y="285" fill="#5A5246" font-size="8" text-anchor="middle" font-family="monospace">MEDIUM</text>
+          <text x="450" y="285" fill="#5A5246" font-size="8" text-anchor="end" font-family="monospace">HIGH</text>
+        </svg>
+      </div>
+      <div class="hero-card float">
+        <div class="card-label">LIVE SUMMARY</div>
+        <div class="risk-bar-wrap">
+          <div class="risk-bar" id="heroRiskBar"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       ANALYSIS + RISK RESULT in one section — NO SCROLL NEEDED
+       ═══════════════════════════════════════════════════════ -->
+  <section class="section" id="analysis">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Transaction analysis</h2>
+        <p class="section-sub">Enter details to generate a fraud probability and explanation.</p>
+      </div>
+      <span class="panel-badge">CREAM PANEL</span>
+    </div>
+
+    <!-- INPUT FORM -->
+    <div class="form-card">
+      <div class="form-group full">
+        <label class="form-label">Transaction Amount</label>
+        <div class="input-wrap">
+          <input type="number" id="txnAmt" class="form-input" placeholder="0.00" value="122.99" step="0.01" min="0" />
+          <span class="input-suffix">USD</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Product Code</label>
+          <select id="productCD" class="form-select">
+            <option value="W">Wireless</option>
+            <option value="H">Hotel/Travel</option>
+            <option value="C">Cash</option>
+            <option value="S">Service</option>
+            <option value="R">Retail</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Card Network</label>
+          <select id="card4" class="form-select">
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="discover">Discover</option>
+            <option value="american express">American Express</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Card Type</label>
+          <select id="card6" class="form-select">
+            <option value="debit">Debit</option>
+            <option value="credit">Credit</option>
+            <option value="debit or credit">Debit or Credit</option>
+            <option value="charge card">Charge Card</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Domain</label>
+          <input type="text" id="emailDomain" class="form-input" placeholder="gmail.com" value="gmail.com" />
+        </div>
+      </div>
+
+      <div class="form-row three">
+        <div class="form-group">
+          <label class="form-label">Hour</label>
+          <input type="number" id="txnHour" class="form-input" placeholder="0–23" value="12" min="0" max="23" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Day of Week</label>
+          <input type="number" id="txnDay" class="form-input" placeholder="1–7" value="3" min="1" max="7" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Week Number</label>
+          <input type="number" id="txnWeek" class="form-input" placeholder="1–52" value="2" min="1" max="52" />
+        </div>
+      </div>
+
+      <button type="button" class="btn-analyze" id="analyzeBtn" onclick="runAnalysis()">
+        <span class="btn-text">Analyze transaction</span>
+        <span class="btn-spinner" id="btnSpinner" style="display:none"></span>
+      </button>
+    </div>
+
+    <!-- RISK RESULT — sits directly below the form, always in DOM -->
+    <div class="risk-output-wrap" id="riskOutput">
+
+      <!-- Placeholder shown before first analysis -->
+      <div class="risk-placeholder" id="riskPlaceholder">
+        <svg width="38" height="38" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18" stroke="#DDD4C0" stroke-width="2.5"/>
+          <path d="M20 12v9M20 26v2" stroke="#DDD4C0" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <p>Run an analysis above to see the risk assessment here.</p>
+      </div>
+
+      <!-- Result panel — hidden until analysis completes -->
+      <div class="risk-result-inner" id="riskResult">
+
+        <div class="risk-result-header">
+          <div>
+            <h3 class="risk-result-title">Risk assessment</h3>
+            <p class="risk-result-sub">Probability, confidence, and feature impact.</p>
+          </div>
+          <span class="panel-badge live">LIVE OUTPUT</span>
+        </div>
+
+        <div class="risk-overview">
+          <div class="donut-wrap">
+            <svg class="donut" viewBox="0 0 120 120">
+              <circle class="donut-track" cx="60" cy="60" r="48" />
+              <circle class="donut-fill" cx="60" cy="60" r="48" id="donutFill" />
+            </svg>
+            <div class="donut-center">
+              <span class="donut-pct" id="riskPct">—</span>
+              <span class="donut-sub">Fraud risk</span>
+            </div>
+          </div>
+          <div class="risk-meta">
+            <div class="risk-badge-wrap">
+              <span class="risk-badge dash" id="riskBadge">—</span>
+            </div>
+            <p class="risk-desc" id="riskDesc">—</p>
+          </div>
+        </div>
+
+        <div class="metric-row">
+          <span class="metric-label">Model confidence</span>
+          <span class="metric-val" id="confidenceVal">—</span>
+        </div>
+
+        <div class="feature-block">
+          <div class="feature-title">Feature impact</div>
+          <div class="feature-list" id="featureList"></div>
+        </div>
+
+      </div><!-- /risk-result-inner -->
+    </div><!-- /risk-output-wrap -->
+
+  </section>
+
+  <!-- Prediction History -->
+  <section class="section" id="history">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Prediction history</h2>
+        <p class="section-sub">Recent checks are archived for review and export.</p>
+      </div>
+      <button class="btn-outline" onclick="exportCSV()">Export CSV</button>
+    </div>
+
+    <div class="table-card">
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>TIMESTAMP</th>
+              <th>AMOUNT</th>
+              <th>FRAUD PROBABILITY</th>
+              <th>RISK LEVEL</th>
+              <th>CONFIDENCE</th>
+            </tr>
+          </thead>
+          <tbody id="historyBody">
+            <tr class="empty-row">
+              <td colspan="5">No predictions yet. Run an analysis to populate history.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Model Info -->
+  <section class="section" id="model">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Model performance</h2>
+        <p class="section-sub">Baseline context for the current classifier.</p>
+      </div>
+      <span class="panel-badge dark">MODEL</span>
+    </div>
+
+    <div class="model-grid">
+      <div class="model-stat-card">
+        <span class="mstat-label">MODEL TYPE</span>
+        <span class="mstat-val" id="modelType">Loading…</span>
+      </div>
+      <div class="model-stat-card">
+        <span class="mstat-label">AUC-ROC</span>
+        <span class="mstat-val accent" id="modelAuc">—</span>
+      </div>
+      <div class="model-stat-card">
+        <span class="mstat-label">TRAINING DATA</span>
+        <span class="mstat-val" id="modelRows">—</span>
+      </div>
+      <div class="model-stat-card">
+        <span class="mstat-label">FEATURES</span>
+        <span class="mstat-val" id="modelFeatures">—</span>
+      </div>
+      <div class="model-stat-card">
+        <span class="mstat-label">FRAUD RATE</span>
+        <span class="mstat-val" id="modelFraudRate">—</span>
+      </div>
+      <div class="model-stat-card">
+        <span class="mstat-label">DATASET</span>
+        <span class="mstat-val small" id="modelDataset">—</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-stripe"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand-icon sm">FD</div>
+        <div class="brand-text">
+          <span class="brand-name">FRAUD DETECTION AI</span>
+          <span class="brand-tagline">Editorial monitoring, modernized</span>
+        </div>
+      </div>
+      <p class="footer-desc">Warm surfaces, compact geometry, and a sunset stripe finish bring the dashboard into the Mistral-inspired visual system.</p>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Explore</span>
+          <a href="#analysis">Analysis</a>
+          <a href="#history">History</a>
+          <a href="#model">Model</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Build</span>
+          <a href="#">Run prediction</a>
+          <a href="#">Review output</a>
+          <a href="#">Support</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Legal</span>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js?v=4"></script>
+</body>
+</html>
