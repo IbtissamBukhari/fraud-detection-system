@@ -4,8 +4,10 @@
 
 An end-to-end machine learning system that scores card transactions for fraud risk in real time and explains every prediction. An XGBoost model trained on 590,540 real transactions from the IEEE-CIS dataset is served through a FastAPI backend, with SHAP explanations and a browser dashboard for analysts.
 
-**Live demo:** _add the Render URL here after deployment_
-**API docs:** `<live-url>/docs`
+**Live demo:** https://fraud-detection-system-wplk.onrender.com
+**API docs:** https://fraud-detection-system-wplk.onrender.com/docs
+
+Hosted on Render's free plan: if the app has been idle, the first request can take up to a minute while it wakes up.
 
 ---
 
