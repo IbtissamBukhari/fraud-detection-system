@@ -3,22 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fraud Detection AI — Frontier Risk Intelligence</title>
-  <!-- Prevent browser caching during development -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
+  <title>Fraud Detection AI</title>
+  <meta name="description" content="Real-time card fraud scoring with XGBoost and SHAP explanations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/style.css?v=4" />
+  <link rel="stylesheet" href="/static/style.css?v=5" />
 </head>
 <body>
 
   <!-- Announcement Bar -->
   <div class="announcement-bar">
-    <span class="announcement-tag">EDITORIAL CONSOLE</span>
-    <span class="announcement-text">Detect fraud with a cleaner, calmer interface and the same predictive engine.</span>
+    <span class="announcement-tag">PORTFOLIO PROJECT</span>
+    <span class="announcement-text">XGBoost model trained on 590K real card transactions, with SHAP explanations for every prediction.</span>
     <a href="#analysis" class="announcement-cta">Start analysis →</a>
   </div>
 
@@ -28,14 +25,14 @@
       <div class="brand-icon">FD</div>
       <div class="brand-text">
         <span class="brand-name">FRAUD DETECTION AI</span>
-        <span class="brand-tagline">Frontier risk intelligence</span>
+        <span class="brand-tagline">Transaction risk scoring</span>
       </div>
     </div>
     <ul class="nav-links">
       <li><a href="#analysis" class="nav-link active">Analysis</a></li>
       <li><a href="#history" class="nav-link">History</a></li>
       <li><a href="#model" class="nav-link">Model</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="https://github.com/IbtissamBukhari/fraud-detection-system" class="nav-link" target="_blank" rel="noopener">Source</a></li>
     </ul>
     <div class="nav-actions">
       <div class="api-status">
@@ -43,29 +40,28 @@
         <span class="status-text" id="statusText">Checking...</span>
       </div>
       <span class="demo-badge">Demo only</span>
-      <button class="btn-studio">Try studio</button>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-label">FRONTIER FRAUD INTELLIGENCE</div>
+      <div class="hero-label">EXPLAINABLE FRAUD DETECTION</div>
       <h1 class="hero-title">Fraud detection,<br />in your hands.</h1>
-      <p class="hero-desc">Inspect a transaction, interpret the risk, and review model context through an editorial interface shaped around warm cream surfaces, saturated orange CTAs, and calm visual hierarchy.</p>
+      <p class="hero-desc">Enter a card transaction to get an instant fraud probability, a risk level, and the features that pushed the score up or down. Every prediction is logged for review and CSV export.</p>
       <div class="hero-actions">
         <a href="#analysis" class="btn-primary">Analyze transaction</a>
         <a href="#history" class="btn-ghost">View history</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
-          <span class="stat-val">94.3%</span>
+          <span class="stat-val">0.911</span>
           <span class="stat-label">Model AUC-ROC</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
           <span class="stat-val">590K</span>
-          <span class="stat-label">Training transactions</span>
+          <span class="stat-label">Dataset transactions</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
@@ -76,7 +72,7 @@
     </div>
     <div class="hero-visual">
       <div class="hero-art">
-        <svg class="hero-chart-svg" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg">
+        <svg class="hero-chart-svg" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative chart, not real data">
           <rect width="480" height="300" fill="#1A1714" rx="0"/>
           <line x1="60" y1="30" x2="60" y2="240" stroke="#2E2A24" stroke-width="1"/>
           <line x1="130" y1="30" x2="130" y2="240" stroke="#2E2A24" stroke-width="1"/>
@@ -122,9 +118,10 @@
           <line x1="410" y1="85" x2="410" y2="60" stroke="#B91C1C" stroke-width="1" stroke-dasharray="3,2"/>
           <rect x="370" y="42" width="78" height="16" rx="3" fill="#B91C1C" opacity="0.9"/>
           <text x="409" y="53" fill="white" font-size="8.5" text-anchor="middle" font-family="sans-serif" font-weight="600">HIGH RISK SPIKE</text>
-          <text x="60" y="18" fill="#EDE6D6" font-size="11" font-family="sans-serif" font-weight="600" letter-spacing="0.04em">FRAUD PROBABILITY TREND</text>
+          <text x="60" y="18" fill="#EDE6D6" font-size="11" font-family="sans-serif" font-weight="600" letter-spacing="0.04em">EXAMPLE RISK TREND</text>
           <rect x="250" y="10" width="10" height="3" rx="1" fill="#E8620A"/>
           <text x="264" y="16" fill="#8C8278" font-size="8.5" font-family="sans-serif">Fraud risk</text>
+          <text x="450" y="295" fill="#5A5246" font-size="7.5" text-anchor="end" font-family="sans-serif">Illustration only</text>
           <line x1="310" y1="13" x2="320" y2="13" stroke="#2E7D52" stroke-width="1.8" stroke-dasharray="4,2"/>
           <text x="324" y="16" fill="#8C8278" font-size="8.5" font-family="sans-serif">Legitimate</text>
           <rect x="60" y="268" width="390" height="6" rx="3" fill="#2E2A24"/>
@@ -135,7 +132,7 @@
         </svg>
       </div>
       <div class="hero-card float">
-        <div class="card-label">LIVE SUMMARY</div>
+        <div class="card-label">LATEST RISK SCORE</div>
         <div class="risk-bar-wrap">
           <div class="risk-bar" id="heroRiskBar"></div>
         </div>
@@ -143,16 +140,14 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════
-       ANALYSIS + RISK RESULT in one section — NO SCROLL NEEDED
-       ═══════════════════════════════════════════════════════ -->
+  <!-- Analysis form and result -->
   <section class="section" id="analysis">
     <div class="section-header">
       <div>
         <h2 class="section-title">Transaction analysis</h2>
         <p class="section-sub">Enter details to generate a fraud probability and explanation.</p>
       </div>
-      <span class="panel-badge">CREAM PANEL</span>
+      <span class="panel-badge">INPUT</span>
     </div>
 
     <!-- INPUT FORM -->
@@ -167,13 +162,13 @@
 
       <div class="form-row">
         <div class="form-group">
-          <label class="form-label">Product Code</label>
+          <label class="form-label" title="Product codes are anonymised in the IEEE-CIS dataset">Product Code</label>
           <select id="productCD" class="form-select">
-            <option value="W">Wireless</option>
-            <option value="H">Hotel/Travel</option>
-            <option value="C">Cash</option>
-            <option value="S">Service</option>
-            <option value="R">Retail</option>
+            <option value="W">W</option>
+            <option value="H">H</option>
+            <option value="C">C</option>
+            <option value="S">S</option>
+            <option value="R">R</option>
           </select>
         </div>
         <div class="form-group">
@@ -199,24 +194,27 @@
         </div>
         <div class="form-group">
           <label class="form-label">Email Domain</label>
-          <input type="text" id="emailDomain" class="form-input" placeholder="gmail.com" value="gmail.com" />
+          <input type="text" id="emailDomain" class="form-input" placeholder="gmail.com" value="gmail.com" list="emailDomains" autocomplete="off" />
+          <datalist id="emailDomains"></datalist>
         </div>
       </div>
 
       <div class="form-row three">
         <div class="form-group">
           <label class="form-label">Hour</label>
-          <input type="number" id="txnHour" class="form-input" placeholder="0–23" value="12" min="0" max="23" />
+          <input type="number" id="txnHour" class="form-input" placeholder="0-23" value="12" min="0" max="23" />
         </div>
         <div class="form-group">
-          <label class="form-label">Day of Week</label>
-          <input type="number" id="txnDay" class="form-input" placeholder="1–7" value="3" min="1" max="7" />
+          <label class="form-label">Day Index</label>
+          <input type="number" id="txnDay" class="form-input" placeholder="0-6" value="3" min="0" max="6" />
         </div>
         <div class="form-group">
-          <label class="form-label">Week Number</label>
-          <input type="number" id="txnWeek" class="form-input" placeholder="1–52" value="2" min="1" max="52" />
+          <label class="form-label">Week Index</label>
+          <input type="number" id="txnWeek" class="form-input" placeholder="0-26" value="2" min="0" max="26" />
         </div>
       </div>
+
+      <p class="form-hint">Time values follow the dataset's relative clock: day index 0-6 and week index 0-26. Unrecognised email domains are treated as unknown.</p>
 
       <button type="button" class="btn-analyze" id="analyzeBtn" onclick="runAnalysis()">
         <span class="btn-text">Analyze transaction</span>
@@ -333,7 +331,7 @@
         <span class="mstat-val accent" id="modelAuc">—</span>
       </div>
       <div class="model-stat-card">
-        <span class="mstat-label">TRAINING DATA</span>
+        <span class="mstat-label">TRAINING ROWS</span>
         <span class="mstat-val" id="modelRows">—</span>
       </div>
       <div class="model-stat-card">
@@ -362,10 +360,10 @@
         <div class="brand-icon sm">FD</div>
         <div class="brand-text">
           <span class="brand-name">FRAUD DETECTION AI</span>
-          <span class="brand-tagline">Editorial monitoring, modernized</span>
+          <span class="brand-tagline">Built by Syed Ali Ibtissam Bukhari</span>
         </div>
       </div>
-      <p class="footer-desc">Warm surfaces, compact geometry, and a sunset stripe finish bring the dashboard into the Mistral-inspired visual system.</p>
+      <p class="footer-desc">A portfolio project: XGBoost and SHAP served through FastAPI. Predictions are for demonstration only and should not be used for real payment decisions.</p>
       <div class="footer-links">
         <div class="footer-col">
           <span class="footer-col-title">Explore</span>
@@ -374,21 +372,20 @@
           <a href="#model">Model</a>
         </div>
         <div class="footer-col">
-          <span class="footer-col-title">Build</span>
-          <a href="#">Run prediction</a>
-          <a href="#">Review output</a>
-          <a href="#">Support</a>
+          <span class="footer-col-title">Project</span>
+          <a href="https://github.com/IbtissamBukhari/fraud-detection-system" target="_blank" rel="noopener">Source code</a>
+          <a href="/docs" target="_blank" rel="noopener">API docs</a>
+          <a href="https://www.kaggle.com/competitions/ieee-fraud-detection" target="_blank" rel="noopener">Dataset</a>
         </div>
         <div class="footer-col">
-          <span class="footer-col-title">Legal</span>
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Security</a>
+          <span class="footer-col-title">Author</span>
+          <a href="https://github.com/IbtissamBukhari" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/syed-ali-ibtissam-bukhari-50438028a" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="/static/app.js?v=4"></script>
+  <script src="/static/app.js?v=5"></script>
 </body>
 </html>

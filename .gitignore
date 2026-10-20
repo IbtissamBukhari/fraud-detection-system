@@ -1,5 +1,6 @@
 # Data - too large for GitHub
-data/
+data/*
+!data/.gitkeep
 *.csv
 *.zip
 
@@ -16,3 +17,8 @@ __pycache__/
 # Conda / pip envs
 env/
 venv/
+# Runtime output
+predictions_history.json
+
+# Test cache
+.pytest_cache/

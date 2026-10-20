@@ -1,87 +1,64 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, StreamingResponse, FileResponse
-from fastapi.staticfiles import StaticFiles
-from api.schemas import TransactionInput, PredictionResponse
-from api.model import predict, HISTORY_FILE
-import json
-import os
 import csv
 import io
 
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
+
+from api.encoding import RAW_CATEGORIES
+from api.model import BASE_DIR, load_history, predict
+from api.schemas import PredictionResponse, TransactionInput
+
+FRONTEND_DIR = BASE_DIR / "frontend"
+
 app = FastAPI(
     title="Fraud Detection API",
-    description="Predicts whether a transaction is fraudulent using XGBoost",
-    version="1.0.0"
+    description="Scores card transactions for fraud risk with XGBoost and explains each prediction with SHAP.",
+    version="1.1.0",
 )
 
-# ---------------- CORS CONFIG ----------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=False,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
-    max_age=3600,
 )
 
-# ---------------- STATIC FILES (frontend) ----------------
-app.mount("/static", StaticFiles(directory="frontend"), name="static")
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
 
-# ---------------- ROOT — serves frontend ----------------
-@app.get("/")
+
+@app.get("/", include_in_schema=False)
 def serve_frontend():
-    return FileResponse("frontend/index.html")
+    return FileResponse(FRONTEND_DIR / "index.html")
 
-# ---------------- HEALTH CHECK ----------------
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
 
-# ---------------- HISTORY ----------------
+
+@app.post("/predict", response_model=PredictionResponse)
+def make_prediction(transaction: TransactionInput):
+    return predict(transaction.model_dump())
+
+
 @app.get("/history")
 def get_history():
-    if not os.path.exists(HISTORY_FILE):
-        return []
-    with open(HISTORY_FILE, "r") as f:
-        return json.load(f)
+    return load_history()
 
-# ---------------- MODEL INFO ----------------
-@app.get("/model-info")
-def model_info():
-    return {
-        "model": "XGBoost",
-        "auc_roc": 0.9107,
-        "training_data": "IEEE-CIS Fraud Detection",
-        "training_rows": 590540,
-        "features_used": 106,
-        "fraud_rate_in_training": "3.50%",
-        "top_features": [
-            "TransactionAmt",
-            "M4",
-            "V308",
-            "log_transaction_amt",
-            "V258"
-        ],
-    }
 
-# ---------------- EXPORT HISTORY ----------------
 @app.get("/history/export")
 def export_history():
-    if not os.path.exists(HISTORY_FILE):
-        return JSONResponse({"error": "No history found"}, status_code=404)
-
-    with open(HISTORY_FILE, "r") as f:
-        history = json.load(f)
-
+    history = load_history()
     if not history:
-        return JSONResponse({"error": "History is empty"}, status_code=404)
+        raise HTTPException(status_code=404, detail="No prediction history yet")
 
     output = io.StringIO()
-    writer = csv.DictWriter(output, fieldnames=history[0].keys())
+    writer = csv.DictWriter(output, fieldnames=list(history[0].keys()))
     writer.writeheader()
     writer.writerows(history)
-    output.seek(0)
 
     return StreamingResponse(
         io.BytesIO(output.getvalue().encode()),
@@ -89,7 +66,28 @@ def export_history():
         headers={"Content-Disposition": "attachment; filename=predictions_history.csv"},
     )
 
-# ---------------- PREDICT ----------------
-@app.post("/predict", response_model=PredictionResponse)
-def make_prediction(transaction: TransactionInput):
-    return predict(transaction.model_dump())
+
+@app.get("/categories")
+def categories():
+    """Accepted values for the categorical inputs, used to fill the dashboard form."""
+    return {
+        "ProductCD": RAW_CATEGORIES["ProductCD"],
+        "card4": [v for v in RAW_CATEGORIES["card4"] if v != "unknown"],
+        "card6": [v for v in RAW_CATEGORIES["card6"] if v != "unknown"],
+        "P_emaildomain": [v for v in RAW_CATEGORIES["P_emaildomain"] if v != "unknown"],
+    }
+
+
+@app.get("/model-info")
+def model_info():
+    return {
+        "model": "XGBoost",
+        "auc_roc": 0.9107,
+        "training_data": "IEEE-CIS Fraud Detection",
+        "dataset_rows": 590540,
+        "training_rows": 472432,
+        "test_rows": 118108,
+        "features_used": 106,
+        "fraud_rate": "3.50%",
+        "top_features": ["TransactionAmt", "M4", "V308", "log_transaction_amt", "V258"],
+    }

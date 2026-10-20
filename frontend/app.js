@@ -1,6 +1,6 @@
 /**
- * FRAUD DETECTION AI — app.js
- * Connects to FastAPI backend at http://localhost:8000
+ * Fraud Detection AI - dashboard logic.
+ * The page is served by the FastAPI app, so API calls use relative URLs.
  */
 
 const API_BASE = '';
@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   checkHealth();
   loadHistory();
   loadModelInfo();
+  loadEmailDomains();
 });
 
 // ─── Health Check ─────────────────────────────────────────
@@ -39,12 +40,20 @@ async function runAnalysis() {
   const card4            = document.getElementById('card4').value;
   const card6            = document.getElementById('card6').value;
   const P_emaildomain    = document.getElementById('emailDomain').value.trim() || 'gmail.com';
-  const transaction_hour = parseInt(document.getElementById('txnHour').value) || 0;
-  const transaction_day  = parseInt(document.getElementById('txnDay').value)  || 1;
-  const transaction_week = parseInt(document.getElementById('txnWeek').value) || 1;
+  const transaction_hour = readInt('txnHour');
+  const transaction_day  = readInt('txnDay');
+  const transaction_week = readInt('txnWeek');
 
   if (isNaN(TransactionAmt) || TransactionAmt <= 0) {
     showToast('Please enter a valid transaction amount.', 'error');
+    return;
+  }
+  const rangeError =
+    outOfRange(transaction_hour, 0, 23, 'Hour') ||
+    outOfRange(transaction_day, 0, 6, 'Day index') ||
+    outOfRange(transaction_week, 0, 26, 'Week index');
+  if (rangeError) {
+    showToast(rangeError, 'error');
     return;
   }
 
@@ -64,12 +73,14 @@ async function runAnalysis() {
 
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
-      throw new Error(err.detail || `Server error ${res.status}`);
+      const detail = Array.isArray(err.detail)
+        ? err.detail.map(d => d.msg).join('; ')
+        : err.detail;
+      throw new Error(detail || `Server error ${res.status}`);
     }
 
     const data = await res.json();
 
-    // Render result directly — NO scrolling, result sits right below the form
     renderRiskOutput(data);
     loadHistory();
     showToast('Analysis complete.', 'success');
@@ -86,12 +97,11 @@ async function runAnalysis() {
 
 // ─── Render Risk Output ───────────────────────────────────
 function renderRiskOutput(data) {
-  // Swap placeholder for result — both sit in the DOM below the form
   document.getElementById('riskPlaceholder').style.display = 'none';
   document.getElementById('riskResult').style.display = 'block';
 
   const prob       = data.fraud_probability;
-  const pct        = (prob * 100).toFixed(2) + '%';
+  const pct        = (prob * 100).toFixed(1) + '%';
   const level      = (data.risk_level || 'Low').toLowerCase();
   const confidence = data.confidence || '—';
 
@@ -205,6 +215,16 @@ async function loadModelInfo() {
   } catch { /* silent */ }
 }
 
+async function loadEmailDomains() {
+  try {
+    const res = await fetch(`${API_BASE}/categories`);
+    if (!res.ok) return;
+    const { P_emaildomain = [] } = await res.json();
+    const list = document.getElementById('emailDomains');
+    list.innerHTML = P_emaildomain.map(d => `<option value="${escHtml(d)}"></option>`).join('');
+  } catch { /* the free-text field still works without suggestions */ }
+}
+
 // ─── Toast ────────────────────────────────────────────────
 let toastTimer;
 function showToast(msg, type = 'info') {
@@ -216,6 +236,13 @@ function showToast(msg, type = 'info') {
 }
 
 // ─── Helpers ─────────────────────────────────────────────
+function readInt(id) {
+  const n = parseInt(document.getElementById(id).value, 10);
+  return Number.isNaN(n) ? 0 : n;
+}
+function outOfRange(value, min, max, label) {
+  return value < min || value > max ? `${label} must be between ${min} and ${max}.` : '';
+}
 function setText(id, val) {
   const el = document.getElementById(id);
   if (el) el.textContent = val;

@@ -1,12 +1,13 @@
-version: "3.9"
-
 services:
   api:
     build: .
     ports:
       - "8000:8000"
-    volumes:
-      - .:/app
     environment:
-      - PYTHONUNBUFFERED=1
+      - HISTORY_PATH=/app/data/predictions_history.json
+    volumes:
+      - history:/app/data
     restart: unless-stopped
+
+volumes:
+  history:
