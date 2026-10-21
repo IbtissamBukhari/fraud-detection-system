@@ -166,7 +166,7 @@ Python, Pandas, NumPy, scikit-learn, XGBoost, LightGBM, imbalanced-learn (SMOTE)
 ## Author
 
 **Syed Ali Ibtissam Bukhari**
-[GitHub](https://github.com/IbtissamBukhari) · [LinkedIn](https://www.linkedin.com/in/syed-ali-ibtissam-bukhari-50438028a)
+[GitHub](https://github.com/IbtissamBukhari) · [LinkedIn](https://www.linkedin.com/in/ibtissambukhari)
 
 ## License
 
