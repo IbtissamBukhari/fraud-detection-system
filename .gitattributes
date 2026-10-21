@@ -1,0 +1,2 @@
+# Count Jupyter notebooks as Python in the GitHub language bar
+*.ipynb linguist-language=Python
